@@ -10,8 +10,8 @@ export class PostService {
 
   post(body: any){
     const headers = new HttpHeaders().set('content-type', 'application/json')
-    return this.http.post('http://localhost:3000/user/', body, { headers }).subscribe((message) => {
-      console.log(message);
+    return this.http.post<any>('http://localhost:3000/user/', body, { headers }).subscribe((message) => {
+      alert(message.message)
     })
   }
 }
