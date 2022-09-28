@@ -4,6 +4,7 @@
 const express = require('express');
 const cors = require('cors');
 const BP = require('body-parser');
+const DB = require('./config/db');
 
 //* My modules
 
@@ -21,6 +22,10 @@ app.get('/', (req, res) => {
 
 
 //* Run app
-app.listen(3000, () => {
-    console.log('http://localhost:3000');
+DB.sync().then(
+    app.listen(3000, () => {
+        console.log('http://localhost:3000');
+    })
+).catch((err) => {
+    console.log(err);
 })
