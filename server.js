@@ -7,11 +7,13 @@ const BP = require('body-parser');
 const DB = require('./config/db');
 
 //* My modules
+const indexRoute = require('./routes/index.route');
 
 const app = express()
 
 //* Esential middlewares
 app.use(cors())
+app.use(express.json())
 app.use(BP.urlencoded({ extended: false }))
 
 app.get('/', (req, res) => {
@@ -19,6 +21,9 @@ app.get('/', (req, res) => {
         "message": "hi boss!" 
     })
 })
+
+//*
+app.use('/user', indexRoute)
 
 
 //* Run app

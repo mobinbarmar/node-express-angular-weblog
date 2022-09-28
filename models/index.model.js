@@ -21,3 +21,5 @@ const Post = seq.define('Post', {
         trim: true
     }
 })
+
+module.exports = Post

@@ -1,0 +1,13 @@
+<div [formGroup]="myForm">
+    <div>
+        <label for="">title:</label>
+        <input type="text" formControlName="title">
+    </div>
+    
+    <div>
+        <label for="">description:</label>
+        <textarea cols="30" rows="10" formControlName="description"></textarea>
+    </div>
+
+    <button (click)="post()">Post!</button>
+</div>
